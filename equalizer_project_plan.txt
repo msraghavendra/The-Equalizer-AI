@@ -1,0 +1,67 @@
+THE EQUALIZER (FairPlay AI) - PROJECT EXECUTION PLAN
+
+1. PROJECT OVERVIEW
+   The Equalizer is an AI-powered rights advocate designed to democratize legal and bureaucratic assistance. 
+   Core Value: Interpreting complex fine print, identifying risks, and taking formal action for the user.
+   Key Technologies: Gemini 3 (Long-context, Multimodal), Multilingual Voice AI.
+
+2. ARCHITECTURE & TECH STACK
+   
+   A. AI & Reasoning Layer (The Brain)
+      - Model: Gemini 3 (or latest Gemini Ultra/Pro 1.5 variants).
+      - Capabilities: 
+        - Long Context: For reading entire insurance policies or government codebooks.
+        - Multimodal: For scanning physical letters/bills via camera.
+      - Framework: LangChain or Google Vertex AI Agent Builder.
+
+   B. Voice Interaction Layer (The Interface)
+      - Speech-to-Text (STT): Google Cloud STT or OpenAI Whisper (fine-tuned for accents).
+      - Text-to-Speech (TTS): ElevenLabs or Google Cloud TTS for natural, empathetic voice output in native languages.
+
+   C. Backend (The Nervous System)
+      - Language: Python (FastAPI or Django).
+      - Database: PostgreSQL (User data), Vector DB (Pinecone/Milvus) for retrieving relevant legal precedents/templates.
+      - Document Parsing: OCR (Tesseract/Google Vision API) for non-digitized mail.
+
+   D. Frontend (The Body)
+      - Mobile App (Recommended): Flutter or React Native. (Crucial for "pocket" accessibility).
+      - Web Dashboard: React.js for managing complex cases.
+
+3. DEVELOPMENT ROADMAP
+
+   PHASE 1: PROTOTYPE & CORE LOGIC (Weeks 1-4)
+   - Goal: Validate document understanding and simplification.
+   - Tasks:
+     1. Setup Gemini API with system prompts designed for "Legal Analyst" persona.
+     2. Build "Risk Detector" module: Input PDF -> Output List of Risks (High/Medium/Low).
+     3. Build "Simplifier" module: Input Legalese -> Output 5th-grade reading level summary.
+
+   PHASE 2: THE VOICE ASSISTANT (Weeks 5-8)
+   - Goal: Enable conversational interaction.
+   - Tasks:
+     1. Implement streaming audio support. User speaks -> STT -> LLM (Reasoning) -> TTS -> Audio.
+     2. Add "Mother Tongue" support. distinct prompts for translation to ensure local dialect accuracy.
+
+   PHASE 3: THE ACTION ENGINE (Weeks 9-12)
+   - Goal: Transition from advice to action.
+   - Tasks:
+     1. Create template library (Appeals, Contest Letters, clarification requests).
+     2. Build "Document Generator": LLM fills templates with specific case details found in the analysis.
+     3. Implement export features (PDF generation, Email drafts).
+
+   PHASE 4: REFINEMENT & COMPLIANCE (Weeks 13+)
+   - Security: Implement PII (Personally Identifiable Information) masking pipeline.
+   - Legal Disclaimers: Ensure "Not Legal Advice" guardrails are robust.
+   - User Testing: Focus on non-English speakers for usability.
+
+4. KEY FEATURES TO IMPLEMENT
+
+   - "Snap & Truth": User takes a photo of a bill; AI highlights overcharges immediately.
+   - "Guardian Mode": Voice assistant listens to a service call (e.g., with an ISP) and suggests what to say in real-time.
+   - "One-Click Appeal": Generate a formal contest letter for parking tickets or unfair fees ready to print/email.
+
+5. NEXT STEPS
+   1. Initialize git repository.
+   2. Creates `requirements.txt` for Python backend.
+   3. Acquire API keys for Gemini and chosen Voice providers.
+   4. Begin Phase 1: Create the basic analysis script.

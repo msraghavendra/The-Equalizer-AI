@@ -1,0 +1,36 @@
+[Your Name]
+[Your Address]
+[City, State, Zip Code]
+[Date]
+
+[Hospital/Medical Provider Billing Department]
+[Address]
+[City, State, Zip Code]
+
+Subject: Dispute of Medical Bill - Account #[Account Number]
+
+Dear Billing Department,
+
+I am writing to dispute charges on my medical bill dated [Date], Account #[Account Number], in the amount of $[Amount].
+
+Reason for Dispute:
+[Explain the issue: incorrect charges, services not received, insurance not applied correctly, duplicate billing, etc.]
+
+I have reviewed my insurance Explanation of Benefits (EOB) and believe the following charges are incorrect:
+[List specific line items and amounts that are disputed]
+
+I am requesting:
+1. A detailed, itemized bill showing all charges
+2. Correction of the billing errors identified above
+3. Resubmission to my insurance provider if applicable
+4. Suspension of collection activities until this dispute is resolved
+
+Please investigate this matter and provide a written response within 30 days. I am willing to pay the correct amount once the billing errors are corrected.
+
+Enclosed: [List supporting documents: EOB, insurance card copy, previous correspondence]
+
+Sincerely,
+
+[Your Name]
+[Phone Number]
+[Email Address]

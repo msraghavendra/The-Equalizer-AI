@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Equalizer | AI Rights Advocate</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h1>The Equalizer</h1>
+            </div>
+            <p class="tagline">Your AI-Powered Rights Advocate. Interpreting fine print, fighting for fairness.</p>
+        </header>
+
+        <main>
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab('analyze')"><i
+                        class="fa-solid fa-magnifying-glass-chart"></i> Risk Analysis</button>
+                <button class="tab-btn" onclick="openTab('simplify')"><i class="fa-solid fa-book-open"></i>
+                    Simplifier</button>
+                <button class="tab-btn" onclick="openTab('voice')"><i class="fa-solid fa-language"></i>
+                    Translator</button>
+                <button class="tab-btn" onclick="openTab('action')"><i class="fa-solid fa-file-pen"></i> Action
+                    Engine</button>
+            </div>
+
+            <div id="analyze" class="tab-content active">
+                <h2>Analyze Contract / Bill</h2>
+                <textarea id="analyze-input"
+                    placeholder="Paste your document text here (e.g., insurance policy, rental agreement, medical bill)..."></textarea>
+                <button class="action-btn" onclick="analyzeDocument()">Analyze Risks</button>
+                <div class="upload-section">
+                    <label for="analyze-file">Or upload a PDF/Image/TXT:</label>
+                    <input type="file" id="analyze-file" accept=".pdf,.jpg,.jpeg,.png,.webp,.txt">
+                    <button class="action-btn secondary-btn" onclick="analyzeFile()"><i
+                            class="fa-solid fa-file-upload"></i> Analyze Uploaded File</button>
+                </div>
+                <div id="analyze-result" class="result-box hidden"></div>
+            </div>
+
+            <div id="simplify" class="tab-content">
+                <h2>Simplify Legalese</h2>
+                <textarea id="simplify-input" placeholder="Paste complex legal text here..."></textarea>
+                <button class="action-btn" onclick="simplifyDocument()">Simplify Text</button>
+                <div class="upload-section">
+                    <label for="simplify-file">Or upload a PDF/Image/TXT:</label>
+                    <input type="file" id="simplify-file" accept=".pdf,.jpg,.jpeg,.png,.webp,.txt">
+                    <button class="action-btn secondary-btn" onclick="simplifyFile()"><i
+                            class="fa-solid fa-file-upload"></i> Simplify Uploaded File</button>
+                </div>
+                <div id="simplify-result" class="result-box hidden"></div>
+            </div>
+
+            <div id="voice" class="tab-content">
+                <h2>Multilingual Voice Advisor</h2>
+                <textarea id="voice-input" placeholder="Enter the advice you need translated..."></textarea>
+                <select id="voice-lang">
+                    <option value="Spanish">Spanish</option>
+                    <option value="French">French</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Kannada">Kannada</option>
+                    <option value="Malayalam">Malayalam</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Gujarati">Gujarati</option>
+                    <option value="Punjabi">Punjabi</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Arabic">Arabic</option>
+                </select>
+                <button class="action-btn" onclick="translateVoice()">Translate & Speak</button>
+                <div id="voice-result" class="result-box hidden"></div>
+            </div>
+
+            <div id="action" class="tab-content">
+                <h2>Generate Legal Document</h2>
+                <label for="region-select">Select Region:</label>
+                <select id="region-select">
+                    <option value="Global">Global / Other</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="EU">European Union</option>
+                </select>
+
+                <label for="template-select">Select Template:</label>
+                <select id="template-select" onchange="updateTemplateForm()">
+                    <option value="parking_appeal_template.txt">Parking Ticket Appeal</option>
+                    <option value="rental_dispute_letter_template.txt">Rental Dispute Letter</option>
+                    <option value="medical_bill_dispute_template.txt">Medical Bill Dispute</option>
+                    <option value="insurance_appeal_template.txt">Insurance Claim Appeal</option>
+                    <option value="consumer_complaint_template.txt">Consumer Rights Complaint</option>
+                    <option value="employment_termination_dispute.txt">Employment Termination Dispute</option>
+                    <option value="privacy_data_request.txt">Data Privacy Access Request (GDPR/CCPA)</option>
+                    <option value="cease_and_desist_harassment.txt">Cease & Desist (Harassment/Debt Collection)</option>
+                    <option value="security_deposit_refund.txt">Security Deposit Refund Request</option>
+                    <option value="unpaid_wages_demand.txt">Demand Letter for Unpaid Wages</option>
+                    <option value="nda_agreement_basic.txt">Non-Disclosure Agreement (NDA)</option>
+                    <option value="foia_request.txt">Freedom of Information Act (FOIA) Request</option>
+                    <option value="freelance_contract_dispute.txt">Freelance Contract Payment Dispute</option>
+                </select>
+                <div class="form-group" id="template-form">
+                    <input type="text" id="your-name" placeholder="Your Name">
+                    <input type="text" id="citation-number" placeholder="Citation Number">
+                    <input type="text" id="citation-date" placeholder="Date of Citation">
+                    <textarea id="user-story" placeholder="Explain why the ticket is unfair..."></textarea>
+                </div>
+                <button class="action-btn" onclick="generateDocument()">Generate Document</button>
+                <div id="action-result" class="result-box hidden"></div>
+            </div>
+
+            <!-- Enhanced Resource Section -->
+            <section class="resources-section">
+                <h2 class="section-title">Knowledge is Power</h2>
+                <div class="resource-grid">
+                    <!-- Common Scams Card -->
+                    <div class="resource-card scams">
+                        <h3><i class="fa-solid fa-triangle-exclamation"></i> Common Scams</h3>
+                        <ul>
+                            <li><span class="highlight">Phishing & Spoofing:</span> Fake emails or calls claiming to be
+                                from banks, govt agencies, or utilities.</li>
+                            <li><span class="highlight">Subscription Traps:</span> "Free trials" that hide expensive
+                                recurring fees in fine print.</li>
+                            <li><span class="highlight">Emergency Scams:</span> Urgent messages asking for money for a
+                                "friend in trouble."</li>
+                            <li><span class="highlight">Overpayment Scams:</span> Getting a "check" for more than owed
+                                and being asked to return the extra.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fighting for Rights Card -->
+                    <div class="resource-card rights">
+                        <h3><i class="fa-solid fa-hand-fist"></i> Fight for Your Rights</h3>
+                        <ul>
+                            <li><span class="highlight">Document Everything:</span> Keep receipts, screenshots, and logs
+                                of all communication.</li>
+                            <li><span class="highlight">Read Before Signing:</span> Use the Equalizer to simplify and
+                                scan for red flags before agreeing to terms.</li>
+                            <li><span class="highlight">Formal Appeals:</span> Use our Action Engine to generate
+                                professional demand letters or appeals.</li>
+                            <li><span class="highlight">Know the Law:</span> Companies count on you not knowing your
+                                rights. Always verify their claims.</li>
+                        </ul>
+                    </div>
+
+                    <!-- How Equalizer Works (Project Specific) -->
+                    <div class="resource-card tech">
+                        <h3><i class="fa-solid fa-microchip"></i> AI-Powered Protection</h3>
+                        <ul>
+                            <li><span class="highlight">Vision Analysis:</span> Upload a photo of any receipt or
+                                contract; our AI "sees" hidden clauses that OCR might miss.</li>
+                            <li><span class="highlight">Contextual Reasoning:</span> We don't just find words; we
+                                analyze *intent* to spot unfair power imbalances.</li>
+                            <li><span class="highlight">Multi-Regional Logic:</span> Dynamically adjusts its legal
+                                "brain" based on whether you are in India, US, or EU.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Privacy & Trust -->
+                    <div class="resource-card privacy">
+                        <h3><i class="fa-solid fa-shield-halved"></i> Privacy First</h3>
+                        <ul>
+                            <li><span class="highlight">PII Redaction:</span> Our Compliance Manager can strip your
+                                personal data before it ever hits an AI model.</li>
+                            <li><span class="highlight">No Data Selling:</span> Unlike big "free" tools, your legal
+                                documents are analyzed in memory and never sold.</li>
+                            <li><span class="highlight">Transparent Logic:</span> We explain *why* something is a risk
+                                in 5th-grade terms, so you're never in the dark.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="/static/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+[Your Name]
+[Policy Number]
+[Address]
+[City, State, Zip Code]
+[Date]
+
+[Insurance Company Name]
+Appeals Department
+[Address]
+[City, State, Zip Code]
+
+Subject: Appeal of Claim Denial - Claim #[Claim Number]
+
+Dear Appeals Department,
+
+I am writing to formally appeal the denial of my insurance claim #[Claim Number] dated [Date of Denial].
+
+Claim Details:
+- Service/Treatment: [Description]
+- Date of Service: [Date]
+- Provider: [Provider Name]
+- Amount: $[Amount]
+
+Reason for Appeal:
+The claim was denied for the following stated reason: "[Quote the denial reason]"
+
+I believe this denial is incorrect because:
+[Provide detailed explanation of why the denial is wrong, citing policy language, medical necessity, or other relevant factors]
+
+Supporting Evidence:
+[List and describe supporting documents: doctor's letter of medical necessity, policy excerpts, medical records, etc.]
+
+According to my policy [cite specific policy section/page], this treatment/service should be covered because [explain coverage criteria that you meet].
+
+I respectfully request that you:
+1. Review this appeal with careful consideration of the attached evidence
+2. Overturn the denial and approve payment for this claim
+3. Provide a detailed written explanation of your decision
+
+I request a response within [state timeframe per policy, typically 30-60 days]. If this appeal is denied, please provide information about external review options.
+
+Thank you for your prompt attention to this matter.
+
+Sincerely,
+
+[Your Name]
+[Contact Phone]
+[Email]
